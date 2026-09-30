@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tool Box - مجموعه کامل ابزارهای کاربردی آنلاین | Online Useful Tools" />
+  <meta name="theme-color" content="#6366f1" />
+  <title>Tool Box | جعبه ابزار</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧰</text></svg>" />
+</head>
+<body>
+  <!-- Background Effects -->
+  <div class="bg-effects">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon-wrap">🧰</div>
+        <div class="logo-text-wrap">
+          <span class="logo-title">Tool Box</span>
+          <span class="logo-sub" data-fa="جعبه ابزار" data-en="Toolbox">جعبه ابزار</span>
+        </div>
+      </a>
+
+      <div class="nav-right">
+        <div class="search-wrap">
+          <svg class="search-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input type="text" id="searchInput" placeholder="جستجوی ابزار..." data-fa="جستجوی ابزار..." data-en="Search tools..." autocomplete="off" />
+        </div>
+        <button class="nav-btn" id="themeToggle" title="Theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="nav-btn lang-btn" id="langToggle">
+          <span id="langLabel">EN</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        <span data-fa="۴۵+ ابزار رایگان" data-en="45+ Free Tools">۴۵+ ابزار رایگان</span>
+      </div>
+      <h1 class="hero-title">
+        <span data-fa="جعبه ابزار" data-en="Tool Box">جعبه ابزار</span>
+        <span class="gradient-text" data-fa="آنلاین" data-en="Online">آنلاین</span>
+      </h1>
+      <p class="hero-desc" data-fa="ابزارهای کاربردی و قدرتمند برای کارهای روزمره، همه در یک جا. سریع، رایگان و بدون نیاز به نصب." data-en="Powerful everyday tools in one place. Fast, free, and no installation needed.">
+        ابزارهای کاربردی و قدرتمند برای کارهای روزمره، همه در یک جا. سریع، رایگان و بدون نیاز به نصب.
+      </p>
+      <div class="hero-stats">
+        <div class="h-stat">
+          <strong>45+</strong>
+          <span data-fa="ابزار" data-en="Tools">ابزار</span>
+        </div>
+        <div class="h-stat">
+          <strong>100%</strong>
+          <span data-fa="رایگان" data-en="Free">رایگان</span>
+        </div>
+        <div class="h-stat">
+          <strong>⚡</strong>
+          <span data-fa="سریع" data-en="Fast">سریع</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Categories -->
+  <section class="cats-section">
+    <div class="container">
+      <div class="cats" id="cats">
+        <button class="cat active" data-cat="all"><span data-fa="همه" data-en="All">همه</span></button>
+        <button class="cat" data-cat="text"><span data-fa="متن" data-en="Text">متن</span></button>
+        <button class="cat" data-cat="calc"><span data-fa="ماشین‌حساب" data-en="Calculator">ماشین‌حساب</span></button>
+        <button class="cat" data-cat="convert"><span data-fa="مبدل" data-en="Converter">مبدل</span></button>
+        <button class="cat" data-cat="generate"><span data-fa="تولیدکننده" data-en="Generator">تولیدکننده</span></button>
+        <button class="cat" data-cat="dev"><span data-fa="توسعه‌دهنده" data-en="Developer">توسعه‌دهنده</span></button>
+        <button class="cat" data-cat="other"><span data-fa="سایر" data-en="Other">سایر</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Grid -->
+  <main class="main">
+    <div class="container">
+      <div class="tools-grid" id="toolsGrid"></div>
+      <div class="empty-state" id="emptyState" style="display:none">
+        <div class="empty-icon">🔍</div>
+        <p data-fa="ابزاری پیدا نشد" data-en="No tools found">ابزاری پیدا نشد</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <div class="modal-top">
+        <h2 id="modalTitle">Tool</h2>
+        <button class="modal-x" id="modalClose">✕</button>
+      </div>
+      <div class="modal-content" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <span class="footer-logo">🧰</span>
+          <strong>Tool Box</strong>
+        </div>
+        <p class="footer-made" data-fa="ساخته شده توسط yazdan" data-en="Made by yazdan">ساخته شده توسط yazdan</p>
+        <a href="https://t.me/Yazdangpt1" target="_blank" rel="noopener" class="tg-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.835.941z"/></svg>
+          <span data-fa="پشتیبانی: @Yazdangpt1" data-en="Support: @Yazdangpt1">پشتیبانی: @Yazdangpt1</span>
+        </a>
+      </div>
+      <p class="footer-copy">© 2025 Tool Box</p>
+    </div>
+  </footer>
+
+  <script src="js/tools-data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
